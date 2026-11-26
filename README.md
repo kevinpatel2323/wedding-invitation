@@ -90,7 +90,9 @@ writeFileSync("invitation-qr.svg", g.QR.toSvg(g.QR.encode(process.argv[1])));
 ```
 
 The code is generated in the browser by `assets/qr.js`, which implements the
-QR spec directly — byte mode, error-correction level M, versions 1–10. That
+QR spec directly — byte mode, error-correction level M, versions 1–10,
+verified end-to-end against Apple's Vision decoder at versions 1, 3, 4, 5, 7,
+9 and 10. That
 matters: the QR encodes your URL and nothing else, so **it never expires and
 can never be rate-limited**. It is not a short link, not a redirect, and not
 a tracking service that could disappear and take the invitation with it.
@@ -105,6 +107,25 @@ keeps working. So:
 - Error-correction level M tolerates about 15% damage, so a little wear or
   a thumbprint is fine.
 - Print the SVG at 2 cm or larger and keep the white margin around it.
+
+## Testing the QR
+
+```bash
+node test/qr.test.mjs      # structure, BCH format words, RS syndromes, round-trip
+```
+
+That test shares no code with the encoder, but it does share one author's
+reading of the spec — which is not enough. A transposed format-information
+block once passed it cleanly while being unreadable by every real phone,
+because the test mirrored the same mistake. So always also decode a
+*rendered image* with a decoder you did not write. On macOS:
+
+```bash
+swiftc -O -o /tmp/vd test/vision-decode.swift
+/tmp/vd invitation-qr.png     # uses Apple's Vision, same engine as the camera
+```
+
+Expected output: `DECODED: https://wedding-invitation-ivory-kappa.vercel.app/`
 
 ## Notes
 

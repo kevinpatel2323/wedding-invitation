@@ -202,15 +202,20 @@
     return best;
   }
 
+  /* Format info, per ISO/IEC 18004 figure 25. Bits 0-5 run DOWN column 8 and
+     bits 9-14 run LEFT along row 8 - transposing the two makes a code that
+     round-trips against itself but that no real scanner can read. */
   function applyFormat(g, size, version, mask) {
     const f = formatBits(mask);
     const bit = (i) => (f >>> i & 1) === 1;
-    for (let i = 0; i <= 5; i++) g[8][i] = bit(i);
-    g[8][7] = bit(6); g[8][8] = bit(7); g[7][8] = bit(8);
-    for (let i = 9; i <= 14; i++) g[14 - i][8] = bit(i);
-    for (let i = 0; i <= 7; i++) g[size - 1 - i][8] = bit(i);
-    for (let i = 7; i <= 14; i++) g[8][size - 15 + i] = bit(i);
-    g[size - 8][8] = true;
+    // copy 1, around the top-left finder
+    for (let i = 0; i <= 5; i++) g[i][8] = bit(i);
+    g[7][8] = bit(6); g[8][8] = bit(7); g[8][7] = bit(8);
+    for (let i = 9; i <= 14; i++) g[8][14 - i] = bit(i);
+    // copy 2: bits 0-7 along row 8 from the right, bits 8-14 up column 8
+    for (let i = 0; i <= 7; i++) g[8][size - 1 - i] = bit(i);
+    for (let i = 8; i <= 14; i++) g[size - 15 + i][8] = bit(i);
+    g[size - 8][8] = true;                                   // dark module
     if (version >= 7) {
       const v = versionBits(version);
       for (let i = 0; i < 18; i++) {
