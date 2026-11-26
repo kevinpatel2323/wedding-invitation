@@ -1,5 +1,8 @@
 # Wedding Invitation
 
+**Live:** https://wedding-invitation-ivory-kappa.vercel.app
+**QR:** `invitation-qr.svg` (print) · `invitation-qr.png` (messaging)
+
 A single static page listing every wedding function with its date, time and
 venue. Tapping a card opens turn-by-turn navigation — Apple Maps on iPhone,
 iPad and Mac, Google Maps everywhere else. There is also an offline QR
@@ -63,13 +66,27 @@ npx vercel          # preview
 npx vercel --prod   # production
 ```
 
-Or push to GitHub and import the repo at vercel.com — no framework, no build
+Already deployed as the Vercel project **wedding-invitation**; the
+production alias stays the same across redeploys, so the printed QR keeps
+working. Or push to GitHub and import the repo at vercel.com — no framework, no build
 command, no environment variables. Vercel serves the directory as-is.
 
 ## The QR code
 
-Open `/qr` on the deployed site, confirm the URL, and download the SVG for
-print or the PNG for WhatsApp.
+`invitation-qr.svg` and `invitation-qr.png` in this repo already encode the
+live URL above — the SVG for anything printed, the PNG for WhatsApp or email.
+
+To regenerate (after a domain change, or with different colours) open
+https://wedding-invitation-ivory-kappa.vercel.app/qr, confirm the URL, and
+download. Or from the command line:
+
+```bash
+node -e '
+const {readFileSync, writeFileSync} = require("fs");
+const g = {}; new Function("globalThis", readFileSync("assets/qr.js","utf8"))(g);
+writeFileSync("invitation-qr.svg", g.QR.toSvg(g.QR.encode(process.argv[1])));
+' "https://your-url-here/"
+```
 
 The code is generated in the browser by `assets/qr.js`, which implements the
 QR spec directly — byte mode, error-correction level M, versions 1–10. That
