@@ -3,209 +3,237 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Aanya &amp; Kevin</title>
-<meta name="description" content="The wedding of Aanya &amp; Kevin — all functions, timings, venues and directions.">
-<meta name="theme-color" content="#0d2b22" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#f7f2e8" media="(prefers-color-scheme: light)">
-<meta property="og:title" content="Aanya &amp; Kevin — Wedding Invitation">
+<title>Emily &amp; James</title>
+<meta name="description" content="The wedding of Emily &amp; James — all functions, timings, venues and directions.">
+<meta name="theme-color" content="#fffaf1">
+<meta name="color-scheme" content="light">
+<meta property="og:title" content="Emily &amp; James — Wedding Invitation">
 <meta property="og:description" content="All functions, timings, venues and directions.">
 <meta property="og:type" content="website">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Jost:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Mukta:wght@200;300;400;500&display=swap">
 <style>
 :root{
-  --paper:#f7f2e8;
-  --paper-2:#efe7d7;
-  --ink:#16302a;
-  --ink-soft:#3f5b52;
-  --ink-faint:#7a8e85;
-  --gold:#a98037;
-  --line:rgba(22,48,42,.14);
-  --card:rgba(255,255,255,.55);
-  --card-edge:rgba(169,128,55,.28);
-  --shadow:0 1px 2px rgba(22,48,42,.05),0 12px 32px -18px rgba(22,48,42,.28);
+  color-scheme:light;
+  --paper:#fffaf1;
+  --paper-2:#fdf2df;
+  --ink:#3d2314;
+  --ink-soft:#6f4b32;
+  --ink-faint:#a08165;
+  --marigold:#e2891d;
+  --vermilion:#b5291f;
+  --gold:#c08f32;
+  --teal:#15706b;
+  --line:rgba(61,35,20,.13);
+  --card:#fffdf8;
+  --card-edge:rgba(192,143,50,.34);
+  --shadow:0 1px 2px rgba(61,35,20,.04),0 14px 32px -20px rgba(61,35,20,.3);
   --maxw:620px;
 }
-:root:not([data-theme="light"]){ color-scheme:light dark; }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --paper:#0d2b22;
-    --paper-2:#0a221b;
-    --ink:#f2ead9;
-    --ink-soft:#bdd3c7;
-    --ink-faint:#7fa193;
-    --gold:#e3bd72;
-    --line:rgba(227,189,114,.18);
-    --card:rgba(255,255,255,.045);
-    --card-edge:rgba(227,189,114,.22);
-    --shadow:0 1px 2px rgba(0,0,0,.3),0 18px 40px -22px rgba(0,0,0,.7);
-  }
-}
-:root[data-theme="dark"]{
-  --paper:#0d2b22; --paper-2:#0a221b; --ink:#f2ead9; --ink-soft:#bdd3c7;
-  --ink-faint:#7fa193; --gold:#e3bd72; --line:rgba(227,189,114,.18);
-  --card:rgba(255,255,255,.045); --card-edge:rgba(227,189,114,.22);
-  --shadow:0 1px 2px rgba(0,0,0,.3),0 18px 40px -22px rgba(0,0,0,.7);
-}
-
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{
   margin:0;
   background:var(--paper);
   color:var(--ink);
-  font-family:'Jost',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-family:'Mukta',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;
   font-weight:300;
-  line-height:1.6;
+  line-height:1.62;
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
 }
-/* ambient background: two soft pools of light + a faint paper grain */
+/* warm wash behind everything */
 body::before{
-  content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
   background:
-    radial-gradient(90% 60% at 50% -10%, color-mix(in oklab, var(--gold) 16%, transparent), transparent 70%),
-    radial-gradient(70% 50% at 10% 108%, color-mix(in oklab, var(--gold) 10%, transparent), transparent 70%),
+    radial-gradient(90% 55% at 50% -8%, rgba(226,137,29,.16), transparent 68%),
+    radial-gradient(75% 45% at 8% 104%, rgba(21,112,107,.10), transparent 70%),
     var(--paper-2);
 }
-body::after{
-  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
-  mix-blend-mode:soft-light;
-}
 
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 16px 72px}
+/* ───────── toran: the hanging garland across the top ───────── */
+.toran{position:sticky;top:0;z-index:5;line-height:0;filter:drop-shadow(0 2px 3px rgba(61,35,20,.12))}
+.toran svg{display:block;width:100%;height:30px}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 16px calc(64px + env(safe-area-inset-bottom))}
 
 /* ───────── hero ───────── */
-.hero{padding:clamp(48px,12vh,96px) 0 clamp(28px,6vh,44px);text-align:center}
+.hero{position:relative;padding:clamp(34px,9vh,70px) 0 clamp(24px,5vh,38px);text-align:center}
+.mandala{
+  position:absolute;top:clamp(6px,2vh,26px);left:50%;transform:translateX(-50%);
+  width:min(330px,88vw);height:min(330px,88vw);
+  color:var(--gold);opacity:.22;pointer-events:none;z-index:0;
+}
+.hero > *:not(.mandala){position:relative;z-index:1}
+
 .seal{
-  width:76px;height:76px;margin:0 auto 26px;border-radius:50%;
+  width:82px;height:82px;margin:0 auto 22px;
   display:grid;place-items:center;
-  border:1px solid var(--card-edge);
+  border-radius:50% 50% 50% 50%/55% 55% 45% 45%;
   background:var(--card);
-  box-shadow:var(--shadow);
-  backdrop-filter:blur(8px);
+  border:1px solid var(--card-edge);
+  box-shadow:0 0 0 5px rgba(255,253,248,.72), var(--shadow);
 }
-.seal span{
-  font-family:'Cormorant Garamond',serif;font-size:23px;letter-spacing:.04em;
-  color:var(--gold);
-}
+.seal span{font-family:'Marcellus',serif;font-size:23px;letter-spacing:.03em;color:var(--vermilion)}
+
 .eyebrow{
-  font-size:11px;letter-spacing:.34em;text-transform:uppercase;
-  color:var(--ink-faint);margin:0 0 18px;
+  font-size:11px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--ink-faint);margin:0 0 14px;
 }
 .names{
-  font-family:'Cormorant Garamond',serif;font-weight:300;
-  font-size:clamp(46px,15vw,82px);line-height:1.02;letter-spacing:-.01em;
-  margin:0;
+  font-family:'Marcellus',serif;font-weight:400;
+  font-size:clamp(40px,13.5vw,72px);line-height:1.06;letter-spacing:.005em;
+  margin:0;color:var(--ink);
 }
-.amp{display:block;font-style:italic;font-size:.44em;color:var(--gold);margin:.14em 0;letter-spacing:.02em}
+.amp{
+  display:block;font-size:.4em;color:var(--marigold);
+  margin:.1em 0;letter-spacing:.14em;text-transform:lowercase;
+}
 .tagline{
-  font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:clamp(17px,4.6vw,21px);color:var(--ink-soft);
-  margin:22px auto 0;max-width:30ch;
+  font-family:'Marcellus',serif;
+  font-size:clamp(16px,4.4vw,20px);color:var(--ink-soft);
+  margin:20px auto 0;max-width:30ch;line-height:1.5;
 }
-.rule{
-  display:flex;align-items:center;gap:12px;justify-content:center;margin:30px auto 0;max-width:260px;
-}
-.rule i{height:1px;flex:1;background:linear-gradient(90deg,transparent,var(--line),transparent)}
-.rule svg{width:12px;height:12px;color:var(--gold);flex:none}
 
-.countdown{margin:30px 0 0;display:flex;justify-content:center;gap:0}
-.cd{min-width:62px;padding:0 10px;position:relative}
-.cd+.cd::before{content:"";position:absolute;left:0;top:18%;bottom:18%;width:1px;background:var(--line)}
+.divider{display:flex;align-items:center;gap:10px;justify-content:center;margin:26px auto 0;max-width:280px}
+.divider i{height:1px;flex:1;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.6}
+.divider svg{width:30px;height:16px;color:var(--marigold);flex:none}
+
+.countdown{margin:26px 0 0;display:flex;justify-content:center;gap:0}
+.cd{min-width:60px;padding:0 clamp(6px,2.4vw,12px);position:relative}
+.cd+.cd::before{content:"";position:absolute;left:0;top:16%;bottom:16%;width:1px;background:var(--line)}
 .cd b{
-  display:block;font-family:'Cormorant Garamond',serif;font-weight:400;
-  font-size:30px;line-height:1.1;font-variant-numeric:tabular-nums;
+  display:block;font-family:'Marcellus',serif;font-weight:400;
+  font-size:clamp(25px,7vw,31px);line-height:1.12;font-variant-numeric:tabular-nums;color:var(--vermilion);
 }
-.cd small{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint)}
+.cd small{font-size:9.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--ink-faint)}
 
 /* ───────── events ───────── */
 .section-label{
-  text-align:center;font-size:11px;letter-spacing:.34em;text-transform:uppercase;
-  color:var(--ink-faint);margin:0 0 26px;
+  text-align:center;font-size:11px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--ink-faint);margin:6px 0 24px;
 }
 .timeline{list-style:none;margin:0;padding:0;display:grid;gap:14px}
 
 .card{
   position:relative;
-  border:1px solid var(--card-edge);border-radius:18px;
-  background:var(--card);backdrop-filter:blur(10px);
+  border:1px solid var(--card-edge);
+  border-radius:26px 26px 18px 18px;
+  background:var(--card);
   box-shadow:var(--shadow);
-  padding:18px 18px 14px;
+  padding:18px 16px 14px;
   transition:transform .25s cubic-bezier(.2,.7,.3,1), box-shadow .25s, border-color .25s;
   -webkit-tap-highlight-color:transparent;
 }
+/* a thin inner keyline, like a printed card */
+.card::before{
+  content:"";position:absolute;inset:4px;border-radius:22px 22px 14px 14px;
+  border:1px solid rgba(192,143,50,.16);pointer-events:none;
+}
 .card:hover,.card:focus-within{
   transform:translateY(-3px);
-  border-color:color-mix(in oklab, var(--gold) 55%, transparent);
-  box-shadow:0 1px 2px rgba(0,0,0,.06),0 22px 44px -22px rgba(22,48,42,.42);
+  border-color:rgba(192,143,50,.7);
+  box-shadow:0 1px 2px rgba(61,35,20,.05),0 22px 42px -22px rgba(61,35,20,.4);
 }
 .card:active{transform:translateY(-1px) scale(.995)}
-/* the whole card is the directions link; the calendar button rides above it */
 .cardlink{display:block;text-decoration:none;color:inherit}
-.cardlink::after{content:"";position:absolute;inset:0;border-radius:18px}
-.cardlink:focus-visible::after{outline:2px solid var(--gold);outline-offset:3px}
+.cardlink::after{content:"";position:absolute;inset:0;border-radius:26px 26px 18px 18px}
+.cardlink:focus-visible::after{outline:2px solid var(--marigold);outline-offset:3px}
 
-.card-top{display:flex;align-items:flex-start;gap:14px}
+.card-top{display:flex;align-items:flex-start;gap:13px}
 .glyph{
-  flex:none;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;
-  background:color-mix(in oklab, var(--gold) 13%, transparent);
-  border:1px solid color-mix(in oklab, var(--gold) 26%, transparent);
-  color:var(--gold);
+  flex:none;width:44px;height:44px;display:grid;place-items:center;
+  border-radius:50% 50% 14% 14%;            /* temple-arch silhouette */
+  background:color-mix(in srgb, var(--accent) 12%, transparent);
+  border:1px solid color-mix(in srgb, var(--accent) 34%, transparent);
+  color:var(--accent);
 }
-.glyph svg{width:20px;height:20px}
+.glyph svg{width:21px;height:21px}
+.card:nth-child(6n+1){--accent:var(--marigold)}
+.card:nth-child(6n+2){--accent:var(--teal)}
+.card:nth-child(6n+3){--accent:var(--vermilion)}
+.card:nth-child(6n+4){--accent:var(--gold)}
+.card:nth-child(6n+5){--accent:var(--marigold)}
+.card:nth-child(6n+6){--accent:var(--teal)}
+
 .card h2{
-  font-family:'Cormorant Garamond',serif;font-weight:400;
-  font-size:26px;line-height:1.14;margin:0;letter-spacing:-.005em;
+  font-family:'Marcellus',serif;font-weight:400;
+  font-size:clamp(21px,5.6vw,25px);line-height:1.18;margin:0;
 }
-.sub{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:5px 0 0}
+.sub{
+  font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--accent);margin:4px 0 0;font-weight:400;
+}
 .when{
-  margin:14px 0 0;padding-top:13px;border-top:1px solid var(--line);
+  margin:13px 0 0;padding-top:12px;border-top:1px dashed var(--line);
   display:grid;gap:7px;font-size:14.5px;color:var(--ink-soft);
 }
-.when div{display:flex;gap:9px;align-items:flex-start}
-.when svg{width:14px;height:14px;flex:none;margin-top:4px;color:var(--ink-faint)}
-.when b{font-weight:400;color:var(--ink)}
-.venue-note{font-size:13px;color:var(--ink-faint)}
+.when > div{display:flex;gap:9px;align-items:flex-start;min-width:0}
+.when svg{width:14px;height:14px;flex:none;margin-top:5px;color:var(--ink-faint)}
+.when span{min-width:0;overflow-wrap:anywhere}
+.when b{font-weight:500;color:var(--ink)}
+.venue-note{font-size:13px;color:var(--ink-faint);line-height:1.5}
+
+.card-foot{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:10px;flex-wrap:wrap;margin-top:12px;
+}
+.cal{
+  position:relative;z-index:1;
+  display:inline-flex;align-items:center;gap:7px;
+  min-height:40px;padding:8px 14px 8px 12px;border-radius:999px;
+  font:inherit;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-faint);background:none;border:1px solid var(--line);cursor:pointer;
+  transition:color .2s,border-color .2s;
+}
+.cal:hover{color:var(--accent);border-color:color-mix(in srgb, var(--accent) 45%, transparent)}
+.cal:focus-visible{outline:2px solid var(--marigold);outline-offset:2px}
+.cal svg{width:13px;height:13px}
 .go{
-  margin:14px 0 0;display:flex;align-items:center;justify-content:flex-end;
-  gap:7px;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);
+  display:flex;align-items:center;gap:7px;margin-left:auto;
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);
 }
 .go svg{width:13px;height:13px;transition:transform .25s}
 .card:hover .go svg{transform:translateX(3px)}
 
-.cal{
-  position:relative;z-index:1;
-  display:inline-flex;align-items:center;gap:7px;
-  margin:12px 0 0;padding:7px 12px 7px 10px;border-radius:999px;
-  font:inherit;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--ink-faint);background:none;border:1px solid var(--line);cursor:pointer;
-  transition:color .2s,border-color .2s;
-}
-.cal:hover{color:var(--gold);border-color:color-mix(in oklab, var(--gold) 45%, transparent)}
-.cal:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
-.cal svg{width:13px;height:13px}
-.card-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.card-foot .go{margin:12px 0 0}
-
 /* ───────── footer ───────── */
-.foot{text-align:center;margin-top:52px}
-.hashtag{
-  font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--gold);margin:0;
-}
-.foot p{font-size:12.5px;color:var(--ink-faint);margin:12px 0 0}
+.foot{text-align:center;margin-top:44px}
+.foot .divider{margin-bottom:20px}
+.hashtag{font-family:'Marcellus',serif;font-size:19px;color:var(--vermilion);margin:0}
+.foot p.note{font-size:12.5px;color:var(--ink-faint);margin:10px 0 0}
 
-/* ───────── entrance ───────── */
 @media (prefers-reduced-motion: no-preference){
   .reveal{opacity:0;transform:translateY(16px);animation:rise .9s cubic-bezier(.2,.7,.3,1) forwards}
   @keyframes rise{to{opacity:1;transform:none}}
 }
+@media (max-width:360px){
+  .wrap{padding-left:13px;padding-right:13px}
+  .card{padding:16px 13px 12px}
+  .card-foot{gap:8px}
+  .cal{letter-spacing:.1em;padding:8px 11px}
+}
 </style>
 </head>
 <body>
+
+<div class="toran" aria-hidden="true">
+  <svg xmlns="http://www.w3.org/2000/svg" height="30" preserveAspectRatio="xMidYMin slice">
+    <defs>
+      <pattern id="garland" width="36" height="30" patternUnits="userSpaceOnUse">
+        <path d="M0 3h36" stroke="#b5291f" stroke-width="1.6" fill="none"/>
+        <path d="M9 4c-4.4 6.4-4.4 13.4 0 19.6 4.4-6.2 4.4-13.2 0-19.6Z" fill="#15706b" opacity=".85"/>
+        <path d="M27 4c-3.4 5-3.4 10.4 0 15.2 3.4-4.8 3.4-10.2 0-15.2Z" fill="#1d8a7f" opacity=".7"/>
+        <circle cx="18" cy="10" r="3.4" fill="#e2891d"/>
+        <circle cx="18" cy="10" r="1.3" fill="#c0601a"/>
+        <circle cx="36" cy="8" r="2.2" fill="#c08f32"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="30" fill="url(#garland)"/>
+  </svg>
+</div>
+
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
   <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M11 21c-4-6-1-13 9-18 1 11-3 16-9 18Z"/><path d="M11 21c0-5 1-8 4-11"/></symbol>
   <symbol id="i-diya" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1.8 2.3 2.6 3.8 2.6 5.2a2.6 2.6 0 0 1-5.2 0C9.4 6.8 10.2 5.3 12 3Z"/><path d="M4 14h16c-.8 3.6-4 6-8 6s-7.2-2.4-8-6Z"/></symbol>
@@ -217,20 +245,67 @@ body::after{
   <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></symbol>
   <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.3 7-12a7 7 0 1 0-14 0c0 5.7 7 12 7 12Z"/><circle cx="12" cy="10" r="2.6"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
-  <symbol id="i-orn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4c2.5 3 2.5 5 0 8-2.5-3-2.5-5 0-8Z"/><path d="M12 12v8"/></symbol>
+  <!-- paisley, used for the section dividers -->
+  <symbol id="i-paisley" viewBox="0 0 30 16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+    <path d="M15 14c-4 0-6.4-2.4-6.4-5.2C8.6 6 10.6 4 13 4c2 0 3.4 1.4 3.4 3 0 1.4-1 2.5-2.3 2.5"/>
+    <path d="M15 14c4 0 6.4-2.4 6.4-5.2C21.4 6 19.4 4 17 4"/>
+    <circle cx="15" cy="2.4" r="1.1" fill="currentColor" stroke="none"/>
+  </symbol>
 </defs></svg>
 
 <main class="wrap">
   <header class="hero">
-    <div class="seal reveal" style="animation-delay:.05s"><span id="monogram">A &amp; K</span></div>
+    <svg class="mandala" viewBox="-100 -100 200 200" aria-hidden="true">
+      <defs>
+        <path id="petal" d="M0 -38 C 11 -52, 11 -66, 0 -79 C -11 -66, -11 -52, 0 -38Z"/>
+        <path id="bud" d="M0 -20 C 5 -26, 5 -32, 0 -37 C -5 -32, -5 -26, 0 -20Z"/>
+      </defs>
+      <g fill="none" stroke="currentColor" stroke-width="1.1">
+        <circle r="14"/><circle r="19"/><circle r="44"/><circle r="84"/><circle r="90"/>
+        <g>
+      <use href="#petal" transform="rotate(0.0)"/>
+      <use href="#petal" transform="rotate(22.5)"/>
+      <use href="#petal" transform="rotate(45.0)"/>
+      <use href="#petal" transform="rotate(67.5)"/>
+      <use href="#petal" transform="rotate(90.0)"/>
+      <use href="#petal" transform="rotate(112.5)"/>
+      <use href="#petal" transform="rotate(135.0)"/>
+      <use href="#petal" transform="rotate(157.5)"/>
+      <use href="#petal" transform="rotate(180.0)"/>
+      <use href="#petal" transform="rotate(202.5)"/>
+      <use href="#petal" transform="rotate(225.0)"/>
+      <use href="#petal" transform="rotate(247.5)"/>
+      <use href="#petal" transform="rotate(270.0)"/>
+      <use href="#petal" transform="rotate(292.5)"/>
+      <use href="#petal" transform="rotate(315.0)"/>
+      <use href="#petal" transform="rotate(337.5)"/>
+        </g>
+        <g>
+      <use href="#bud" transform="rotate(0)"/>
+      <use href="#bud" transform="rotate(30)"/>
+      <use href="#bud" transform="rotate(60)"/>
+      <use href="#bud" transform="rotate(90)"/>
+      <use href="#bud" transform="rotate(120)"/>
+      <use href="#bud" transform="rotate(150)"/>
+      <use href="#bud" transform="rotate(180)"/>
+      <use href="#bud" transform="rotate(210)"/>
+      <use href="#bud" transform="rotate(240)"/>
+      <use href="#bud" transform="rotate(270)"/>
+      <use href="#bud" transform="rotate(300)"/>
+      <use href="#bud" transform="rotate(330)"/>
+        </g>
+      </g>
+    </svg>
+
+    <div class="seal reveal" style="animation-delay:.05s"><span id="monogram">E &amp; J</span></div>
     <p class="eyebrow reveal" style="animation-delay:.12s">Together with our families</p>
     <h1 class="names reveal" style="animation-delay:.18s">
-      <span id="name-a">Aanya</span><span class="amp">and</span><span id="name-b">Kevin</span>
+      <span id="name-a">Emily</span><span class="amp">and</span><span id="name-b">James</span>
     </h1>
     <p class="tagline reveal" id="tagline" style="animation-delay:.26s">
       invite you to celebrate the days that make us one
     </p>
-    <div class="rule reveal" style="animation-delay:.32s"><i></i><svg><use href="#i-orn"/></svg><i></i></div>
+    <div class="divider reveal" style="animation-delay:.32s"><i></i><svg><use href="#i-paisley"/></svg><i></i></div>
     <div class="countdown reveal" id="countdown" style="animation-delay:.38s" aria-label="Time until the wedding"></div>
   </header>
 
@@ -238,8 +313,9 @@ body::after{
   <ol class="timeline" id="events"></ol>
 
   <footer class="foot">
-    <p class="hashtag" id="hashtag">#AanyaAndKevin</p>
-    <p>Tap any card for live directions.</p>
+    <div class="divider"><i></i><svg><use href="#i-paisley"/></svg><i></i></div>
+    <p class="hashtag" id="hashtag">#EmilyAndJames</p>
+    <p class="note">Tap any card for live directions.</p>
   </footer>
 </main>
 
@@ -252,12 +328,12 @@ body::after{
    icon       →  leaf | diya | henna | music | rings | glass
    ════════════════════════════════════════════════════════════════════ */
 const WEDDING = {
-  nameA: "Aanya",
-  nameB: "Kevin",
-  monogram: "A & K",
+  nameA: "Emily",
+  nameB: "James",
+  monogram: "E & J",
   tagline: "invite you to celebrate the days that make us one",
-  hashtag: "#AanyaAndKevin",
-  timeZone: "Asia/Kolkata",
+  hashtag: "#EmilyAndJames",
+  timeZone: "America/New_York",
   mainEventId: "wedding",          // the event the countdown points at
 
   events: [
@@ -266,10 +342,10 @@ const WEDDING = {
       name: "Ganesh Puja",
       subtitle: "Where it begins",
       icon: "diya",
-      date: "2027-02-11", start: "09:00", end: "11:30",
-      venue: "Patel Residence",
-      address: "12 Sample Street, Navrangpura, Ahmedabad 380009",
-      lat: 23.0366, lng: 72.5611,
+      date: "2027-06-09", start: "09:00", end: "11:30",
+      venue: "The Harper Residence",
+      address: "14 Maple Court, Edison, NJ 08820",
+      lat: 40.5187, lng: -74.4121,
       note: "Family only · Traditional Indian attire"
     },
     {
@@ -277,10 +353,10 @@ const WEDDING = {
       name: "Mehndi",
       subtitle: "Henna & high tea",
       icon: "henna",
-      date: "2027-02-12", start: "16:00", end: "20:00",
-      venue: "The Courtyard Lawn",
-      address: "88 Placeholder Road, Bodakdev, Ahmedabad 380054",
-      lat: 23.0325, lng: 72.5120,
+      date: "2027-06-10", start: "16:00", end: "20:00",
+      venue: "The Garden Terrace",
+      address: "220 Cedar Lane, Iselin, NJ 08830",
+      lat: 40.5751, lng: -74.3232,
       note: "Dress code: shades of green & yellow"
     },
     {
@@ -288,10 +364,10 @@ const WEDDING = {
       name: "Sangeet",
       subtitle: "A night of music",
       icon: "music",
-      date: "2027-02-13", start: "19:30", end: "23:30",
-      venue: "Grand Ballroom, Hotel Example",
-      address: "Sample Avenue, SG Highway, Ahmedabad 380015",
-      lat: 23.0120, lng: 72.5070,
+      date: "2027-06-11", start: "19:30", end: "23:30",
+      venue: "Grand Ballroom, Hotel Meridian",
+      address: "1500 Riverside Drive, Woodbridge, NJ 07095",
+      lat: 40.5576, lng: -74.2846,
       note: "Indo-western · Dinner served from 9 pm"
     },
     {
@@ -299,10 +375,10 @@ const WEDDING = {
       name: "Haldi",
       subtitle: "Turmeric & laughter",
       icon: "leaf",
-      date: "2027-02-14", start: "10:00", end: "12:30",
-      venue: "Poolside, Hotel Example",
-      address: "Sample Avenue, SG Highway, Ahmedabad 380015",
-      lat: 23.0120, lng: 72.5070,
+      date: "2027-06-12", start: "10:00", end: "12:30",
+      venue: "Poolside Courtyard, Hotel Meridian",
+      address: "1500 Riverside Drive, Woodbridge, NJ 07095",
+      lat: 40.5576, lng: -74.2846,
       note: "Wear something you don't mind staining yellow"
     },
     {
@@ -310,10 +386,10 @@ const WEDDING = {
       name: "The Wedding",
       subtitle: "Vivaah · the vows",
       icon: "rings",
-      date: "2027-02-14", start: "19:00", end: "23:00",
-      venue: "Riverfront Garden",
-      address: "Placeholder Marg, Riverfront West, Ahmedabad 380006",
-      lat: 23.0225, lng: 72.5714,
+      date: "2027-06-12", start: "19:00", end: "23:00",
+      venue: "Lakeside Pavilion",
+      address: "85 Willow Road, Princeton, NJ 08540",
+      lat: 40.3573, lng: -74.6672,
       note: "Baraat at 7 pm sharp · Phera at 8:45 pm"
     },
     {
@@ -321,10 +397,10 @@ const WEDDING = {
       name: "Reception",
       subtitle: "Dinner & dancing",
       icon: "glass",
-      date: "2027-02-15", start: "19:00", end: "23:59",
-      venue: "Terrace Hall, Hotel Example",
-      address: "Sample Avenue, SG Highway, Ahmedabad 380015",
-      lat: 23.0120, lng: 72.5070,
+      date: "2027-06-13", start: "19:00", end: "23:59",
+      venue: "Terrace Hall, Hotel Meridian",
+      address: "1500 Riverside Drive, Woodbridge, NJ 07095",
+      lat: 40.5576, lng: -74.2846,
       note: "Formal · Black tie optional"
     }
   ]
@@ -333,7 +409,6 @@ const WEDDING = {
 
 const $ = (s) => document.querySelector(s);
 const pad = (n) => String(n).padStart(2, "0");
-const isApple = /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent);
 
 $("#monogram").textContent = WEDDING.monogram;
 $("#name-a").textContent = WEDDING.nameA;
@@ -348,7 +423,6 @@ function eventDate(e, which) {
   const [y, m, d] = e.date.split("-").map(Number);
   const [hh, mm] = (which === "end" ? e.end : e.start).split(":").map(Number);
   const guess = Date.UTC(y, m - 1, d, hh, mm);
-  // find the UTC offset the wedding's zone had at that moment, then correct
   const fmt = new Intl.DateTimeFormat("en-US", {
     timeZone: WEDDING.timeZone, hour12: false,
     year: "numeric", month: "2-digit", day: "2-digit",
@@ -373,22 +447,17 @@ function fmtTime(e) {
   return e.end ? t(eventDate(e)) + " – " + t(eventDate(e, "end")) : t(eventDate(e));
 }
 
-/* Apple devices get Apple Maps, everyone else Google Maps. Both links
-   are plain https, so they also work if the app isn't installed. */
+/* Google Maps for everyone. The plain https link hands off to the Google
+   Maps app when it is installed and falls back to the browser when not. */
 function mapsHref(e) {
-  const q = encodeURIComponent(e.venue + ", " + e.address);
-  const at = e.lat + "," + e.lng;
-  return isApple
-    ? `https://maps.apple.com/?daddr=${at}&q=${q}&dirflg=d`
-    : `https://www.google.com/maps/dir/?api=1&destination=${at}&destination_place_id=`;
+  return "https://www.google.com/maps/dir/?api=1&destination=" + e.lat + "," + e.lng;
 }
 
 const list = $("#events");
 WEDDING.events.forEach((e, i) => {
   const li = document.createElement("li");
-  li.className = "reveal";
+  li.className = "card reveal";
   li.style.animationDelay = (0.5 + i * 0.07).toFixed(2) + "s";
-  li.className += " card";
   li.innerHTML = `
     <a class="cardlink" href="${mapsHref(e)}" target="_blank" rel="noopener"
        aria-label="${e.name} — directions to ${e.venue}">
@@ -449,7 +518,7 @@ const main = WEDDING.events.find((e) => e.id === WEDDING.mainEventId) || WEDDING
 const target = eventDate(main);
 const cdEl = $("#countdown");
 function tick() {
-  let ms = target - Date.now();
+  const ms = target - Date.now();
   if (ms <= 0) {
     cdEl.innerHTML = `<div class="cd" style="min-width:auto"><b style="font-size:24px">Today is the day</b></div>`;
     return;

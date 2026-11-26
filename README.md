@@ -4,9 +4,10 @@
 **QR:** `invitation-qr.svg` (print) · `invitation-qr.png` (messaging)
 
 A single static page listing every wedding function with its date, time and
-venue. Tapping a card opens turn-by-turn navigation — Apple Maps on iPhone,
-iPad and Mac, Google Maps everywhere else. There is also an offline QR
-generator at `/qr` for the printed invite.
+venue. Tapping a card opens turn-by-turn navigation in Google Maps — the plain
+`https` link hands off to the Google Maps app when it is installed and falls
+back to the browser when it is not. There is also an offline QR generator at
+`/qr` for the printed invite.
 
 No database. No backend. No API keys. No build step. Four files of plain
 HTML, CSS and JavaScript served as static assets.
@@ -27,12 +28,12 @@ values are placeholders.
 
 ```js
 const WEDDING = {
-  nameA: "Aanya",
-  nameB: "Kevin",
-  monogram: "A & K",
+  nameA: "Emily",
+  nameB: "James",
+  monogram: "E & J",
   tagline: "invite you to celebrate the days that make us one",
-  hashtag: "#AanyaAndKevin",
-  timeZone: "Asia/Kolkata",   // the venues' time zone, not the guest's
+  hashtag: "#EmilyAndJames",
+  timeZone: "America/New_York",  // the venues' time zone, not the guest's
   mainEventId: "wedding",     // which event the countdown points at
   events: [ /* one entry per function */ ]
 };
@@ -112,4 +113,16 @@ keeps working. So:
 - "Add to calendar" builds the `.ics` file in the browser.
 - Works with JavaScript disabled? No — the card list is rendered from the
   config at runtime. That is the trade for keeping it one editable file.
-- Respects `prefers-reduced-motion` and `prefers-color-scheme`.
+- Respects `prefers-reduced-motion`. The palette is light-only by design,
+  so the page looks the same on a phone set to dark mode.
+- Laid out mobile-first and checked for horizontal overflow at 320, 360 and
+  390 px. Tap targets on the cards are at least 40 px tall.
+
+## Design
+
+A light, Indian-wedding palette on cream paper: marigold, vermilion, gold and
+peacock teal, with Marcellus for display type and Mukta for body text. The
+decoration is all inline SVG — a tiled toran garland across the top, a
+mandala watermark behind the names, paisley section dividers, and temple-arch
+icon badges that cycle through the accent colours card by card. Nothing is
+loaded as an image file.
